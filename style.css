@@ -1,0 +1,10 @@
+.card-img-top{
+    max-width: 290px
+}
+
+#pagar-carrito {
+    display: block;
+    margin-left: 25%;
+    margin-right: 25%;
+}
+
