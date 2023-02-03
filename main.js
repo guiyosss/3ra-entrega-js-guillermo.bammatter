@@ -106,9 +106,19 @@ items.forEach((elemento) => {
 
 
 
-const Total = document.getElementById("total") 
-Total.innerText = carrito.reduce((acumulador,item) => acumulador + item.elemento.precio* item.cantidad,0);
+function suma_de_carrito(){
+    let total_productos= []
+    carrito.forEach(element => {
+        let total_por_producto = element.precio*element.cantidad
+        total_productos.push(total_por_producto)
+    });
+    let total = total_productos.reduce((a, b) => a + b, 0);
+    return total
+}
+
 
 /// boton pagar
 const botonPagar = document.querySelector("#pagar-carrito")
-botonPagar.addEventListener
+botonPagar.addEventListener("click", ()=> {
+    alert("el total a pagar de los productos es:"+suma_de_carrito())
+})
